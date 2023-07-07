@@ -1,0 +1,896 @@
+<!-- <%- include("partials/header") -%> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Dongle&family=Fira+Sans&family=Source+Code+Pro:wght@300&family=Source+Sans+Pro:wght@300&display=swap"
+  rel="stylesheet">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: bisque; */
+  }
+
+  body {
+    background: url(images/html_table.jpg) center / cover;
+    font-family: "Josefin Sans", sans-serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .btntwo {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #00b894;
+    margin-left: 2%;
+    color: white;
+  }
+
+  .btntwo:hover {
+    background: #fff;
+    color: #000;
+  }
+
+  main {
+
+    width: 100%;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* color: white; */
+  }
+
+  section h3 {
+    font-size: 35px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    color: black;
+    /* text-shadow: 1px 1px 2px black; */
+  }
+
+  section h1 {
+    margin: 30px 0 20px 0;
+    font-size: 55px;
+    font-weight: 700;
+    /* text-shadow: 2px 1px 5px black; */
+    color: black;
+    text-transform: uppercase;
+  }
+
+  section p {
+    font-size: 25px;
+    word-spacing: 2px;
+    margin-bottom: 25px;
+    color: black;
+    /* text-shadow: 1px 1px 1px black; */
+  }
+
+  section a {
+    padding: 12px 30px;
+    border-radius: 4px;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.5s ease;
+  }
+
+  .classbtns {
+    /* margin-top: 10%; */
+    padding-top: 10%;
+  }
+
+
+  section {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main.table {
+    /* background: url(images/html_table.jpg) center / cover; */
+    width: 82vw;
+    height: fit-content;
+    background-color: #fff5;
+    padding-top: 2%;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    padding-bottom: 1rem;
+    overflow: hidden;
+  }
+
+
+  .table__header {
+    width: 100%;
+    height: 10%;
+    background-color: #fff4;
+    padding: .8rem 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .table__header .input-group {
+    width: 35%;
+    height: 100%;
+    background-color: #fff5;
+    padding: 0 .8rem;
+    border-radius: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .2s;
+  }
+
+  .table__header .input-group:hover {
+    width: 45%;
+    background-color: #fff8;
+    box-shadow: 0 .1rem .4rem #0002;
+  }
+
+  .table__header .input-group img {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .table__header .input-group input {
+    width: 100%;
+    padding: 0 .5rem 0 .3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+  .table__body {
+    width: 95%;
+    max-height: 90vh;
+    background-color: #fffb;
+
+    margin: .8rem auto;
+    border-radius: .6rem;
+
+    overflow: auto;
+    overflow: overlay;
+  }
+
+  .table__body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  .table__body::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+  }
+
+  .table__body:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  td img {
+    width: 36px;
+    height: 36px;
+    margin-right: .5rem;
+    border-radius: 50%;
+
+    vertical-align: middle;
+  }
+
+  table,
+  th,
+  td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+  }
+
+  thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+    cursor: pointer;
+    text-transform: capitalize;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #0000000b;
+  }
+
+  tbody tr {
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+  }
+
+  tbody tr.hide {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  tbody tr:hover {
+    background-color: #fff6 !important;
+  }
+
+  tbody tr td,
+  tbody tr td p,
+  tbody tr td img {
+    transition: .2s ease-in-out;
+  }
+
+  tbody tr.hide td,
+  tbody tr.hide td p {
+    padding: 0;
+    font: 0 / 0 sans-serif;
+    transition: .2s ease-in-out .5s;
+  }
+
+  tbody tr.hide td img {
+    width: 0;
+    height: 0;
+    transition: .2s ease-in-out .5s;
+  }
+
+  .status {
+    padding: .4rem 0;
+    border-radius: 2rem;
+    text-align: center;
+  }
+
+  .status.delivered {
+    background-color: #86e49d;
+    color: #006b21;
+  }
+
+  .status.cancelled {
+    background-color: #d893a3;
+    color: #b30021;
+  }
+
+  .status.pending {
+    background-color: #ebc474;
+  }
+
+  .status.shipped {
+    background-color: #6fcaea;
+  }
+
+
+  @media (max-width: 1000px) {
+    td:not(:first-of-type) {
+      min-width: 12.1rem;
+    }
+  }
+
+  thead th span.icon-arrow {
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    border: 1.4px solid transparent;
+
+    text-align: center;
+    font-size: 1rem;
+
+    margin-left: .5rem;
+    transition: .2s ease-in-out;
+  }
+
+  thead th:hover span.icon-arrow {
+    border: 1.4px solid #6c00bd;
+  }
+
+  thead th:hover {
+    color: #6c00bd;
+  }
+
+  thead th.active span.icon-arrow {
+    background-color: #6c00bd;
+    color: #fff;
+  }
+
+  thead th.asc span.icon-arrow {
+    transform: rotate(180deg);
+  }
+
+  thead th.active,
+  tbody td.active {
+    color: #6c00bd;
+  }
+
+  form {
+    margin-top: 5%;
+    padding-left: 7%;
+  }
+
+  #table_two {
+    margin-top: 5%;
+    margin-left: 7%;
+    height: fit-content;
+    max-height: 90vh;
+  }
+
+  .card {
+    /* border-radius: 5%; */
+    text-align: left;
+    border: 1px solid #000;
+    background-color: white;
+    color: #00b894;
+    background-color: bisque;
+    width: 30vw;
+    margin-left: 35%;
+    padding: 3rem 0 3rem 5rem;
+  }
+
+  .classbtns {
+    padding-bottom: 5rem;
+    /* background-color: #00b894; */
+  }
+
+  .btntwo.submit {
+    margin-top: 2%;
+    padding: 12px 20px;
+    border-radius: 4px;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.5s ease;
+  }
+
+
+  #table_three {
+    min-width: 30%;
+    height: fit-content;
+    margin: auto;
+    width: fit-content;
+    font-size: 1.5rem;
+    font-family: 'Dongle', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  /* Set font and font-size */
+
+  input[type="date"] {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Set width */
+  input[type="date"] {
+    width: 200px;
+  }
+
+  /* Change background color */
+  input[type="date"] {
+    background-color: #f1f1f1;
+  }
+
+  /* Change border color and radius */
+  input[type="date"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  /* Change text color */
+  input[type="date"] {
+    color: #333;
+  }
+
+  form p {
+    text-align: left;
+    padding-left: 2.5rem;
+    padding-top: 1rem;
+  }
+
+  /* Hide arrows */
+  /* input[type="date"]::-webkit-inner-spin-button, 
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+} */
+</style>
+
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  integrity="sha512-EeYzJK6euTBx3q3sBYwvwoxmQ2iH/oG9TfM+TzT/HaMQh06ZzrrFqo3RsPh+3lwGMQs+SPQTs9XmxW1zTlYJg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<body>
+
+  <main>
+
+
+
+
+    <style>
+      /* Style the floating form */
+      .floating-form {
+        min-width: 25%;
+        width: fit-content;
+        height: fit-content;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        z-index: 9999;
+      }
+      .floating-window {
+        min-width: 25%;
+        width: fit-content;
+        height: fit-content;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        z-index: 9999;
+      }
+
+      
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="info">
+      <h1>Welcome</h1>
+      <br />
+
+      <main class="table" id="table_three">
+
+        <h3>Name: <%=user.firstName%>
+            <%=user.lastName%>
+        </h3><br>
+
+
+        <h3> Mobile: <%=user.mobile%>
+        </h3><br>
+
+
+        <h3>Email: <%=user.username%>
+        </h3>
+        <button id="open-form-btn" class="btntwo submit">Update profile</button>
+      </main>
+
+
+
+
+
+
+
+
+
+
+      <div id="floating-form" class="floating-form" style="display: none;">
+        <i id="close-icon" class="fas fa-times close-icon"><img src="../images/close.png" height="20px"
+            align="right" /></i>
+        <br><br>
+        <h3>Enter Your Information:</h3>
+        <form method="post" action="/update_user" onsubmit="return validateForm()">
+          <input type="hidden" name="user" value="<%=user._id%>">
+          <label for="fname">First Name:</label>
+          <input type="text" id="fname" name="fname" required><br><br>
+          <label for="lname">Last Name:</label>
+          <input type="text" id="lname" name="lname" required><br><br>
+          <label for="number">Mobile:</label>
+          <input typr="text" id="number" name="number" required /><br><br>
+
+
+          <button type="submit" class="btntwo submit">Submit</button>
+        </form>
+      </div>
+
+      <script>
+        function isAllNumbers(input) {
+          return /^\d{10}$/.test(input);
+        }
+        function isAllAlphabets(input) {
+          return /^[a-zA-Z]+$/.test(input);
+        }
+        // console.log(numberValue);
+        
+        function validateForm() {
+          var numberInput = document.getElementById('number');
+          var numberValue = numberInput.value;
+          var fnameInput = document.getElementById('fname');
+          var fnameValue = fnameInput.value;
+          var lnameInput = document.getElementById('lname');
+          var lnameValue = lnameInput.value;
+          if (!isAllAlphabets(fnameValue)) {
+            alert('First name should contain only alphabets');
+            return false;
+          }
+          
+          if (!isAllAlphabets(lnameValue)) {
+            alert('Last name should contain only alphabets');
+            return false;
+          }
+          if (!isAllNumbers(numberValue)) {
+            alert('Mobile numbers should contain exactly 10 numbers');
+            return false;
+          }
+            // if(numberValue.length==10){
+            //   alert('Mobile numbers should contain exactly 10 numbers');
+            //   return false;
+            // }
+
+          return true;
+        }
+
+
+
+
+        const floatingFo = document.getElementById('floating-form');
+        const closeIcon = document.getElementById('close-icon');
+
+        closeIcon.addEventListener('click', () => {
+          floatingFo.style.display = 'none';
+        });
+        // Get the button and floating form elements
+        const openFormBtn = document.getElementById("open-form-btn");
+        const floatingForm = document.getElementById("floating-form");
+        const closeFormBtn = document.getElementById("close-form-btn");
+
+        // Add event listener to open form button
+        openFormBtn.addEventListener("click", () => {
+          if (floatingForm.style.display === "none") {
+            floatingForm.style.display = "block";
+            // openFormBtn.innerHTML = "Close Form";
+          } else {
+            floatingForm.style.display = "none";
+            // openFormBtn.innerHTML = "Update Profile";
+          }
+        });
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <a href="/logout"><button class="btntwo submit" style="margin-top: 2rem;margin-bottom: 2rem;">
+          Logout</button></a>
+
+
+      <form action="/view" method="post" id="my-form">
+
+        
+
+
+
+
+
+        <main class="table">
+          <section class="table__header">
+            <h3>Venues Available</h3>
+
+          </section>
+          <p>*Please select the dates and then select the venue you want.</p>
+
+          <label for="start-date">Start Date:</label>
+          <input type="date" id="startdate" name="start" min="" onchange="setMin()" required>
+
+          <label for="end-date">End Date:</label>
+          <input type="date" id="enddate" name="end" min="" onchange="setMin()" required>
+
+          <script>
+            function setMin() {
+              // Get the value of the start date input
+              var today = new Date().toISOString().split('T')[0];
+              document.getElementById("startdate").setAttribute("min", today);
+              var startDateValue = document.getElementById("startdate").value;
+
+
+              // Set the minimum value of the end date input to the start date
+              document.getElementById("enddate").setAttribute("min", startDateValue);
+            }
+          </script>
+
+
+          <section class="table__body">
+            <table>
+              <thead>
+                <tr>
+                  <th> Select <span class="icon-arrow">&UpArrow;</span></th>
+                  <th scope="col">Venue name</th>
+                  <th scope="col">City</th>
+                  <th scope="col">State</th>
+                  <th scope="col">Event</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Capacity</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <input type="hidden" name="usernamee" value="<%=user.username%>" required>
+
+
+
+                <% if(record.length> 0){ %> <% record.forEach(function(element){ %>
+                    <tr>
+                      <% if(element.isOccupied==="No" ){ %>
+                        <td><input type="radio" name="isSelect" value="<%= element.username %>"></td>
+                        <% }else{ %>
+                          <td>*</td>
+                          <% } %>
+                            <td id="venue_name">
+                              <%= element.username %>
+                            </td>
+                            <td id="venue_city">
+                              <%= element.cityName %>
+                            </td>
+                            <td id="venue_state">
+                              <%= element.stateName %>
+                            </td>
+                            <td>
+                              <%= element.type %>
+                            </td>
+                            <td>
+                              <%= element.capacity %>
+                            </td>
+                            <td id="venue_price">
+                              <%= element.price %>
+                            </td>
+                            <% if(element.isOccupied==="No" ){ %>
+                              <td>
+                                <div class="status delivered">Available</div>
+                              </td>
+                              <% }else{ %>
+                                <td>
+                                  <div class="status cancelled">Not available</div>
+                                </td>
+                                <% } %>
+                    </tr>
+                    <% }); %>
+                      <% } %>
+              </tbody>
+            </table>
+          </section>
+
+        </main>
+
+
+
+
+
+
+
+        <input type="submit" class="btntwo submit" value="Submit">
+        <div id="floating-window" class="floating-window" style="display: none;">
+          <h2>Confirmation for Payment</h2>
+          <p>Enter the detais:</p><br>
+          <form>
+            <label for="cvv">CVV:</label>
+            <input id="cvv" type="text" required/>
+            <label for="cardnumber">Card Number:</label>
+            <input id="cardnumber" type="text" required/>
+            <p>Please click on submit to make payment and book the selected venue.<br>
+            Also refresh the page to view changes.</p>
+          </form>
+          <p id="form-data"></p>
+          <button id="confirm-submit-button" class="btntwo submit">Submit</button>
+          <button id="cancel-submit-button" class="btntwo submit">Cancel</button>
+        </div>
+
+        
+      </form>
+        <script>
+          // Get the form and floating window elements
+          const form = document.getElementById('my-form');
+          const floatingWindow = document.getElementById('floating-window');
+        
+          // Get the submit button in the form
+          const submitButton = document.querySelector('#my-form input[type="submit"]');
+        
+          // Get the buttons inside the floating window
+          const confirmSubmitButton = document.getElementById('confirm-submit-button');
+          const cancelSubmitButton = document.getElementById('cancel-submit-button');
+        
+          // Function to open the floating window
+          function openFloatingWindow() {
+            // const radioButtons = document.querySelectorAll('input[name="isSelect"]');
+
+// Add a click event listener to each radio button
+// const rowData;
+// radioButtons.forEach(function(radio) {
+//   radio.addEventListener('click', function() {
+//     // Get the corresponding row of the clicked radio button
+//     const row = this.parentNode.parentNode;
+
+//     // Access the data of each field within the row
+//     rowData = {
+//       venueName: row.querySelector('#venue_name').textContent,
+//       venueCity: row.querySelector('#venue_city').textContent,
+//       venueState: row.querySelector('#venue_state').textContent,
+//       eventType: row.cells[4].textContent,
+//       venuePrice: row.querySelector('#venue_price').textContent,
+//       venueCapacity: row.cells[6].textContent,
+//       venueStatus: row.querySelector('.status').textContent
+//     };
+
+//     // Use the rowData for further processing or display
+//     console.log(rowData);
+//   });
+// });
+  // Get the selected venue details
+  // const selectedRow = document.querySelector('#my-form input[type="radio"]:checked');
+  // const venueName = selectedRow.parentElement.querySelector('#venue_name').value;
+  // const venueCity = selectedRow.parentElement.querySelector('#venue_city').value;
+  // const venuePrice = selectedRow.querySelector('#venue-price').textContent;
+
+  // // Update the content of the floating window with the form data
+  // const formDataElement = document.getElementById('form-data');
+  // formDataElement.textContent = 'Name: ' + venueName + '\nEmail: ' + venueCity;
+  floatingWindow.style.display = 'block';
+}
+        
+          // Function to close the floating window
+          function closeFloatingWindow() {
+            floatingWindow.style.display = 'none';
+            form.reset();
+          }
+        
+          // Add event listener to the submit button in the form
+          submitButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+        
+            openFloatingWindow();
+          });
+        
+          // Add event listeners to the buttons in the floating window
+          confirmSubmitButton.addEventListener('click', function() {
+            form.submit(); // Submit the form
+          });
+        
+          cancelSubmitButton.addEventListener('click', closeFloatingWindow);
+        </script>
+
+
+
+
+
+
+
+      <form action="/deselect" method="post">
+        <main class="table">
+          <section class="table__header">
+            <h3>Venues Selected</h3>
+          </section>
+          <p>*Please select if you want to deselect</p>
+
+          <section class="table__body">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Select</th>
+                  <th scope="col">Venue name</th>
+                  <th scope="col">City</th>
+                  <th scope="col">State</th>
+                  <th scope="col">Event</th>
+                  <th scope="col">From</th>
+                  <th scope="col">To</th>
+                </tr>
+              </thead>
+
+
+
+
+              <tbody>
+                <input type="hidden" name="usernamee" value="<%=user.username%>">
+
+
+
+                <% if(record.length> 0){ %> <% record.forEach(function(element){ %>
+                    <% if(element.isOccupied===user.username ){ %>
+                      <tr>
+                        <td><input type="radio" name="isSelect" value="<%= element.username %>"></td>
+
+                        <td>
+                          <%= element.username %>
+                        </td>
+                        <td>
+                          <%= element.cityName %>
+                        </td>
+                        <td>
+                          <%= element.stateName %>
+                        </td>
+                        <td>
+                          <%= element.type %>
+                        </td>
+                        <td>
+                          <%= element.datefrom %>
+                        </td>
+                        <td>
+                          <%= element.dateto %>
+                        </td>
+                      </tr>
+                      <% } %>
+                        <% }); %>
+                          <% } %>
+              </tbody>
+            </table>
+          </section>
+        </main>
+        <button type="submit" class="btntwo submit" style="margin-bottom: 5rem;">Delete</button>
+
+      </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <div class="classbtns submit"> -->
+      <!-- </div> -->
+      </section>
+  </main>
+
+
+
+</body>

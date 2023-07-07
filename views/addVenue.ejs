@@ -1,0 +1,150 @@
+<html>
+  <head> 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/login_style" />
+  </head>
+
+  <body>
+
+    <img class="bgg" id="bg" src="/images/event.jpeg" alt="event" />
+
+    <div class="container">
+      <div class="split">
+        <div class="centered">
+          <img
+            src="/images/logo_transparent.png"
+            style="width: 185px"
+            alt="logo"
+          />
+          <h1>ADD VENUE</h1>
+
+          <form action="/addVenue" method="post">
+            <input type="hidden" name="ownerdtl" value="<%=ownerdtl%>" />
+
+            <div class="input-field">
+              <input type="text" id="venue" required name="place" />
+              <label for="venue">Venue</label>
+            </div>
+
+
+
+
+
+
+            <div class="input-field" style="margin-left: 5;  margin-top: 5%">
+              <select id="state" name="state">
+                <option value="">Select State</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+              </select>
+              <!-- <label for="state">Select State:</label> -->
+            </div>
+
+            <div class="input-field" style="margin-left: 5;">
+              <!-- <label for="city">Select City:</label> -->
+              <select id="city" name="city" disabled>
+                <option value="">Select City</option>
+              </select>
+            </div>
+
+
+
+
+
+            <script>
+              // Define cities for each state
+        var cities = {
+          'Andhra Pradesh': ['Visakhapatnam', 'Vijayawada', 'Guntur', 'Nellore', 'Kurnool', 'Hyderabad'],
+          'Assam': ['Guwahati', 'Silchar', 'Jorhat', 'Dibrugarh', 'Nagaon'],
+          'Bihar': ['Patna', 'Gaya', 'Bhagalpur', 'Muzaffarpur', 'Darbhanga'],
+          'Gujarat': ['Ahmedabad', 'Surat', 'Vadodara', 'Rajkot', 'Bhavnagar'],
+          'Haryana': ['Faridabad', 'Gurgaon', 'Panipat', 'Karnal', 'Ambala'],
+          'Karnataka': ['Bangalore', 'Mysore', 'Hubli', 'Mangalore', 'Belgaum'],
+          'Madhya Pradesh': ['Indore', 'Bhopal', 'Jabalpur', 'Gwalior', 'Ujjain'],
+          'Maharashtra': ['Mumbai', 'Pune', 'Nagpur', 'Nashik', 'Aurangabad', 'Akola'],
+          'Tamil Nadu': ['Chennai', 'Coimbatore', 'Madurai', 'Tiruchirappalli', 'Salem'],
+          'Uttar Pradesh': ['Lucknow', 'Kanpur', 'Varanasi', 'Agra', 'Allahabad', 'Gaziabad', 'Bareilly']
+        };
+        
+        // Update city dropdown when state is selected
+        var stateDropdown = document.getElementById('state');
+        var cityDropdown = document.getElementById('city');
+        
+        // Update city dropdown when state is selected
+        stateDropdown.addEventListener('change', function() {
+          var state = stateDropdown.value;
+          // console.log(state);
+          if (state) {
+            var stateCities = cities[state];
+            cityDropdown.innerHTML = '<option value="">Select City</option>';
+            stateCities.forEach(function(city) {
+              var option = document.createElement('option');
+              option.value = city;
+              option.text = city;
+              cityDropdown.add(option);
+            });
+            cityDropdown.disabled = false;
+          } else {
+            cityDropdown.innerHTML = '<option value="">Select City</option>';
+            cityDropdown.disabled = true;
+          }
+        });
+        
+            </script>
+
+            <!--        <input type="text" id="Location" required name="city" />
+              <label for="Location">City</label>
+
+              <input type="text" id="Location" required name="state" />
+              <label for="Location">State</label>
+      -->
+
+      <div class="input-field" style="margin-left: 5;  margin-top: 5%">
+        <!-- <label for="state">Event Type</label> -->
+        <select id="type" name="type">
+          <option value="">Event Type</option>
+          <option value="Birthdays">Birthdays</option>
+          <option value="Weddings">Weddings</option>
+          <option value="Anniversaries">Anniversaries</option>
+          <option value="Product Launches">Product Launches</option>
+          <option value="Exhibitions">Exhibitions</option>
+          <option value="Seminars">Seminars</option>
+        </select>
+      </div>
+
+            <div class="input-field">
+              <input type="number" id="Capacity" required name="capacity" />
+              <label for="Capacity">Capacity</label>
+            </div>
+
+            <div class="input-field">
+              <input type="number" id="Price" required name="price" />
+              <label for="Price">Price</label>
+            </div>
+
+            <button class="btn1" type="submit">Add</button><br /><br />
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>

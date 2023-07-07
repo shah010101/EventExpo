@@ -1,0 +1,205 @@
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Hind", sans-serif;
+  background: #fff;
+  background-image: url("../images/aboutjpg.jpg");
+  display: flex;
+  min-height: 100vh;
+}
+  header {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+}
+
+nav {
+  font-family: "Josefin Sans", sans-serif;
+  width: 100%;
+  height: 15vh;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+nav .logo {
+  width: 25%;
+  text-align: center;
+}
+
+nav .menu {
+  width: 35%;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav .menu a {
+  width: 25%;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav .menu a:hover {
+  color: #00b894;
+}
+
+
+  .gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  margin-top: 200px;
+  max-width: 1200px;
+}
+
+.gallery-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.gallery-item {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  margin: 10px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.gallery-item:hover img {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  transform: scale(1.1);
+}
+
+.gallery-item .overlay {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+.gallery-item .overlay-content {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.gallery-item .overlay-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.gallery-item .overlay-content p {
+  font-size: 1rem;
+}
+
+</style>
+<body>
+
+
+  <header>
+    <nav>
+      <div class="logo"><h1 style="font-size: 20px">Events Expo.</h1></div>
+      <div class="menu">
+        <a href="/">Home</a>
+        <a href="/contact">contact</a>
+        <a href="/about">reviews</a>
+        <a href="/gallery">gallery</a>
+        <a href="/FAQ">FAQ</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="gallery-container">
+    <div class="gallery-row">
+      <div class="gallery-item">
+        <img src="https://media.istockphoto.com/id/972734600/photo/colorful-stage-decoration-for-bride-and-groom-in-sangeet-night-of-indian-wedding.jpg?s=612x612&w=0&k=20&c=Nfg0iA61eXVAEfl7_UhGBvEp8fJihuG2bAAxEoZJHFg=" alt="Image 1">
+        <div class="overlay">
+          <div class="overlay-content">
+            <h3>Weddings</h3>
+            <p>Celebrate the beginning of a beautiful journey.</p>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://media.istockphoto.com/id/1139957268/photo/group-of-friends-celebrating-birthday-together.jpg?s=612x612&w=0&k=20&c=HWgjmLaqGn-ViqUMd3jAVuLTnLQcIXlNpZEpnNAPwHY=" alt="Image 2">
+        <div class="overlay">
+          <div class="overlay-content">
+            <h3>Birthdays</h3>
+            <p>It's time to celebrate the beginning of another wonderful year.</p>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://media.istockphoto.com/id/1340856781/photo/business-leader-giving-a-speech-on-a-seminar-in-board-room.jpg?s=612x612&w=0&k=20&c=X7YJZwl_Kw59OMcwmx_MYFhPOqX7qQxxtw4feRaHKTM=" alt="Image 3">
+      <div class="overlay">
+        <div class="overlay-content">
+          <h3>Seminars</h3>
+          <p>Expand your horizons. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-row">
+    <div class="gallery-item">
+      <img src="https://media.istockphoto.com/id/901945284/photo/generic-tradeshow-scene.jpg?s=612x612&w=0&k=20&c=v427MfNlN6qHJyEQkCEcJVI9AeJCcx5ixHltGZO5B5A=" alt="Image 4">
+      <div class="overlay">
+        <div class="overlay-content">
+          <h3>Exhibitions</h3>
+          <p>Expand your horizons.</p>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGFubml2ZXJzYXJ5JTIwY2VsZWJyYXRpb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="Image 5">
+      <div class="overlay">
+        <div class="overlay-content">
+          <h3>Anneversaries</h3>
+          <p>Mark another year of togetherness, laughter, and unforgettable memories.</p>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.istockphoto.com/id/1145940285/photo/product-launch-motivational-business-marketing-words-quotes-concept.jpg?s=2048x2048&w=is&k=20&c=o-3WxS6R2VRanME3d03f79mCx1m63PPsA9skRMxrjEU=" alt="Image 6">
+      <div class="overlay">
+        <div class="overlay-content">
+          <h3>Product Launch</h3>
+          <p>Experience the next level of innovation and creativity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>

@@ -1,0 +1,146 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/faq_style.css" />
+    <link
+    href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap"
+    rel="stylesheet"
+    />
+    <title>FAQ</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><h1 style="font-size: 20px">Events Expo.</h1></div>
+        <div class="menu">
+          <a href="/">Home</a>
+          <a href="/contact">contact</a>
+          <a href="/about">reviews</a>
+          <a href="/gallery">gallery</a>
+          <a href="/FAQ">FAQ</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h2 style="color: black">Frequently Asked Questions?</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button id="accordion-button-1" aria-expanded="false">
+            <span class="accordion-title"
+              >What services does your event management company provide?</span
+            >
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              We provide comprehensive event planning and management services
+              including venue selection, vendor coordination, and on-site event
+              support.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-3" aria-expanded="false">
+            <span class="accordion-title"
+              >What types of events do you plan?</span
+            >
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              We plan all types of events including corporate events, weddings,
+              birthday parties, and more.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-4" aria-expanded="false">
+            <span class="accordion-title"
+              >What kind of venues do you work with?</span
+            >
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              We work with a wide range of venues including hotels, convention
+              centers, and outdoor spaces.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-5" aria-expanded="false">
+            <span class="accordion-title">Can you provide event staffing?</span>
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Yes, we can provide event staffing including event coordinators,
+              waitstaff, and security personnel.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-2" aria-expanded="false">
+            <span class="accordion-title"
+              >How far in advance should I book your services?</span
+            >
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              We recommend booking our services as soon as possible to ensure
+              availability.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-2" aria-expanded="false">
+            <span class="accordion-title"
+              >Can you provide event design and decor services?</span
+            >
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Yes, we offer event design and decor services to make your event
+              look stunning.
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button id="accordion-button-2" aria-expanded="false">
+            <span class="accordion-title"
+              >Can you accommodate dietary restrictions?</span
+            >
+            <span class="icon" aria-hidden="true"></span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Yes, we can accommodate dietary restrictions and preferences for
+              your event.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const items = document.querySelectorAll(".accordion button");
+
+    function toggleAccordion() {
+      const itemToggle = this.getAttribute("aria-expanded");
+
+      for (i = 0; i < items.length; i++) {
+        items[i].setAttribute("aria-expanded", "false");
+      }
+
+      if (itemToggle == "false") {
+        this.setAttribute("aria-expanded", "true");
+      }
+    }
+
+    items.forEach((item) => item.addEventListener("click", toggleAccordion));
+  </script>
+</html>

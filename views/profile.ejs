@@ -1,0 +1,23 @@
+<%- include("partials/header"); -%>
+
+<main>
+  <section>
+    <h3>Welcome <%=user.firstName%>.</h3>
+    
+    <ul class="info-list">
+        <li class="info-item"> Name: <%=user.firstName%> <%=user.lastName%></li>
+        <li class="info-item"> Email: <%=user.email%></li>
+        <li class="info-item"> Mobile: <%=user.mobile%></li>    
+        <li class="info-item"> Selected Venues: <ul class="info-list">
+            <% user.selectedVenue.forEach(function(venue){ %>
+                <li class="info-item info">Venue name:  <%=venue.placeName%></li>
+                <li class="info-item info">Venue city:  <%=venue.cityName%></li>
+                <li class="info-item info">Venue state: <%=venue.stateName%></li>
+            <% }); %>
+        </ul> </li>
+    </ul>
+
+  </section>
+</main>
+
+<%- include("partials/footer"); -%>

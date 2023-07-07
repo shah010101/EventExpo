@@ -1,0 +1,205 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Source+Code+Pro:wght@300&family=Source+Sans+Pro:wght@300&display=swap"
+  rel="stylesheet"
+/>
+
+<style>
+
+
+  .bgg{
+    background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  }
+
+  /* Split the screen in half */
+  .split {
+    height: 100%;
+    width: 35%;
+    position: fixed;
+    z-index: 1;
+    top: 5%;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  .form-outline {
+    margin-bottom: 4%;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  input {
+    font-size: large;
+    margin-bottom: 1rem;
+  /* border-radius: 10%; */
+  }
+
+  .btn1 {
+    color: white;
+    background-color: #00b894;
+    border-color: #00b894;
+    /* border-radius: 10%; */
+    padding: 0.5rem;
+    width: 50%;
+    cursor: pointer;
+  }
+
+  .btn2 {
+    background-color: white;
+    border-color: #00b894;
+    border-radius: 10%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  p {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+  h2 {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  h3{
+    font-size: 0.95rem;
+    margin-right: 0.5rem;
+  }
+
+  h1 {
+    font-size: xx-large;
+    font-weight: bold;
+    color: #00b894;
+  }
+
+  /* Control the left side */
+  .left {
+    top: 5%;
+    background-color: white;
+    left: 15%;
+    border-radius: 2% 0 0 2%;
+  }
+
+  /* Control the right side */
+  .right {
+    top: 5%;
+    color: white;
+    right: 15%;
+    background-color: #00b894;
+    border-radius: 0 2% 2% 0;
+  }
+
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  /* Style the image inside the centered container, if needed */
+  .centered img {
+    width: 200px;
+  }
+
+  form{
+    text-align: left;
+  }
+
+  .input-field {
+  position: relative;
+  width: 300px;
+  margin-bottom: 2rem;
+  height: 44px;
+  line-height: 44px;
+}
+label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #d3d3d3;
+  transition: 0.2s all;
+  cursor: text;
+}
+input {
+  width: 100%;
+  background-color: white;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 0;
+  box-shadow: none;
+  color: #111;
+  border-bottom: 2px solid #d3d3d3;
+}
+input:invalid {
+  outline: 0;
+  color: #00b894;
+    border-color: #00b894;
+}
+input:focus,
+input:valid {
+  border-color: #00b894;
+}
+input:focus~label,
+input:valid~label {
+  font-size: 14px;
+  top: -24px;
+  color: #00b894;
+}
+</style>
+
+<body>
+  <img class="bgg" id="bg" src="/images/event.jpeg" alt="event">
+  <div class="container">
+    <div class="split left">
+      <div class="centered">
+        <a href="/"><img src="/images/logo_transparent.png" alt="Event Expo." /></a>
+      <h1>We're Event Expo.</h1>
+
+      <h3>Please set the password</h3><br>
+        <form action="/middle" method="post">
+
+          <div class="input-field">
+            <input type="text" id="number" required name="number"/>
+            <label for="number">Mobile</label>
+          </div>
+
+          <div class="input-field">
+            <input type="password" id="password" required name="password"/>
+            <label for="password">Password</label>
+          </div><br>
+
+          <button class="btn1" type="submit">Submit</button><br><br>
+
+          <input type="hidden" name="user" value="<%=user.username%>">
+          <input type="hidden" name="record" value="<%=record%>">
+        </form>
+      </div>
+    </div>
+
+    <div class="split right">
+      <div class="centered">
+        <h2>We are more than just a company</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
